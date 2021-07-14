@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>lzhVue</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <h1>hello,{{lzh}}</h1>
+        <h1>schoolName,{{school.name}}</h1>
+        <h1>schoolAddress,{{school.address}}</h1>
+        <h1>schoolSubject,{{school.subject()}}</h1>
+        <h1>{{school.name && school.address}}</h1>
+        <a v-bind:href="url">go to my web</a>
+        <a :href="url">go to my web2</a>
+    </div>
+    <script type="text/javascript" >
+        const c =new Vue({
+            el:'#root',
+            data:{
+                lzh:'luozhuoheng',
+                school:{
+                    name:'haha',
+                    address:'岭南1',
+                    subject:()=>'社会'
+                },
+                url:'http://lzhforj.top'
+            }
+        })
+        console.log(c)
+    </script>
+
+</body>
+</html>
